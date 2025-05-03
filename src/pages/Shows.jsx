@@ -107,7 +107,11 @@ const Shows = () => {
         !fetchContentError &&
         !filtersListsError &&
         shows.length === 0 && <NoResults />}
-      <Pagination totalPages={totalPages} />
+      {!loadingContent &&
+        !loadingFiltersLists &&
+        !fetchContentError &&
+        !filtersListsError &&
+        shows.length > 19 && <Pagination totalPages={totalPages} />}
     </Container>
   );
 };
